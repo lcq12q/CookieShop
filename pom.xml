@@ -1,0 +1,121 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<!--项目坐标-->
+	<groupId>org.example</groupId>
+	<artifactId>CookieShop</artifactId>
+	<packaging>war</packaging>
+	<version>1.0-SNAPSHOT</version>
+	<name>CookieShop Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+
+	<!--项目属性配置-->
+	<properties>
+		<maven.compiler.source>26</maven.compiler.source>
+		<maven.compiler.target>26</maven.compiler.target>
+		<mysql.version>8.0.33</mysql.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<!--依赖配置-->
+	<dependencies>
+<!--		<dependency>-->
+<!--			<groupId>junit</groupId>-->
+<!--			<artifactId>junit</artifactId>-->
+<!--			<version>3.8.1</version>-->
+<!--			<scope>test</scope>-->
+<!--		</dependency>-->
+		<!-- Source: https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+			<groupId>com.mysql</groupId>
+			<artifactId>mysql-connector-j</artifactId>
+			<version>8.0.33</version>
+<!--			<scope>compile</scope>-->
+		</dependency>
+		<!-- Servlet 6.0依赖 -->
+		<dependency>
+			<groupId>jakarta.servlet</groupId>
+			<artifactId>jakarta.servlet-api</artifactId>
+			<version>6.0.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<!-- JSTL 3.0.2-->
+		<!-- Source: https://mvnrepository.com/artifact/jakarta.servlet.jsp.jstl/jakarta.servlet.jsp.jstl-api -->
+		<dependency>
+			<groupId>jakarta.servlet.jsp.jstl</groupId>
+			<artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+			<version>3.0.2</version>
+			<scope>compile</scope>
+		</dependency>
+		<!-- JSTL 实现（GlassFish 提供） -->
+		<dependency>
+			<groupId>org.glassfish.web</groupId>
+			<artifactId>jakarta.servlet.jsp.jstl</artifactId>
+			<version>3.0.1</version>
+		</dependency>
+		<!-- JUnit 4.13.2依赖 -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.13.2</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.github.harryemartland</groupId>
+			<artifactId>queryrunner</artifactId>
+			<version>1.4.1</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.aspectj</groupId>
+					<artifactId>aspectjweaver</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>commons-dbutils</groupId>
+			<artifactId>commons-dbutils</artifactId>
+			<version>1.8.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.10.1</version>
+		</dependency>
+	</dependencies>
+
+	<!--构建配置-->
+	<build>
+		<finalName>CookieShop</finalName>
+		<plugins>
+			<!--插件配置-->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.14.0</version>
+				<configuration>
+					<source>${maven.compiler.source}</source>
+					<target>${maven.compiler.target}</target>
+				</configuration>
+			</plugin>
+			<!-- exec 插件：直接 `mvn exec:exec` 即可运行带 main 的测试类，并强制 UTF-8 输出 -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>3.6.4</version>
+			<configuration>
+				<!-- 项目编译目标是 Java 26，必须用对应的 JDK 26 运行，否则报 UnsupportedClassVersionError -->
+				<executable>C:\Users\Miao\.jdks\liberica-full-26.0.2\bin\java.exe</executable>
+				<arguments>
+					<argument>-Dfile.encoding=UTF-8</argument>
+						<argument>-classpath</argument>
+						<classpath/>
+						<argument>xyz.lcq12q.service.impl.GoodsServiceImpl</argument>
+					</arguments>
+				</configuration>
+			</plugin>
+		</plugins>
+		<resources>
+			<!--资源文件配置-->
+		</resources>
+	</build>
+</project>

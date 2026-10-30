@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html class="x-admin-sm">
+<head>
+	<meta charset="UTF-8">
+	<title>欢迎页面-X-admin2.2</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/font.css">
+	<link rel="stylesheet" href="../css/xadmin.css">
+	<script type="text/javascript" src="../js/jquery1.12.4.js"></script>
+	<script type="text/javascript" src="../lib/layui/layui.js" charset="utf-8"></script>
+	<script type="text/javascript" src="../js/xadmin.js"></script>
+	<!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+	<!--[if lt IE 9]>
+	<script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+	<script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+<div class="layui-fluid">
+	<div class="layui-row">
+		<!-- 注意：这里给 form 加了一个 lay-filter="editForm" 用于快速回显 -->
+		<form class="layui-form" lay-filter="editForm">
+			<!-- 隐藏域：保存 id，方便后续提交更新 -->
+<!--			<input type="hidden" name="id" id="userId">-->
+			<div class="layui-form-item">
+				<label for="L_email" class="layui-form-label">
+					<span class="x-red">*</span>邮箱
+				</label>
+				<div class="layui-input-inline">
+					<input type="text" id="L_email" name="email" required="" lay-verify="email" autocomplete="off" class="layui-input" readonly>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label for="L_username" class="layui-form-label">
+					<span class="x-red">*</span>用户名
+				</label>
+				<div class="layui-input-inline">
+					<input type="text" id="L_username" name="username" required="" autocomplete="off" class="layui-input" readonly>
+				</div>
+			</div>
+			<div class="layui-form-item" id="name">
+				<label for="L_name" class="layui-form-label">收货人</label>
+				<div class="layui-input-inline">
+					<input type="text" id="L_name" name="name" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label for="L_phone" class="layui-form-label">电话</label>
+				<div class="layui-input-inline">
+					<input type="text" id="L_phone" name="phone" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label for="L_phone" class="layui-form-label">地址</label>
+				<div class="layui-input-inline">
+					<input type="text" id="L_address" name="address" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label"></label>
+				<button class="layui-btn" lay-filter="update" lay-submit="">保存修改</button>
+			</div>
+		</form>
+	</div>
+</div>
+<script>
+	// 1. 获取 URL 中的 id 参数的工具函数
+	function getQueryVariable(variable) {
+		var query = window.location.search.substring(1)
+		if (!query) return ''   // 如果没有查询参数，直接返回空字符串
+		var vars = query.split("&")
+		for (var i = 0;i<vars.length;i++) {
+			var pair = vars[i].split("=")
+			if(pair[0] === variable) {
+				// 如果参数值存在且不为 "false" 或空，才返回，否则返回 ''
+				var val = pair[1] ? decodeURIComponent(pair[1]) : ''
+				return (val === 'false' || val === '') ? '' : val
+			}
+		}
+		return ''
+	}
+
+	layui.use(['form', 'layer'],function() {
+		var $ = layui.jquery
+		var form = layui.form,
+			layer = layui.layer,
+			rawId = getQueryVariable('id')
+		// 🛡️️ 核心大招：强行清洗！只要不是真正的数字或有效字符，一律归零为 ''
+		var id = (rawId && rawId !== 'false' && rawId !== 'undefined' && rawId !== 'null') ? rawId : ''
+
+		console.log("清洗后最终确定的用户ID为: [" + id + "]")
+
+		if (id) {
+			$('#userId').val(id)
+			// 2. 发起 AJAX 请求，根据 ID 获取后端数据并回显
+			$.ajax({
+				url:'./user_detail',    // 指向后端获取单条数据的Servlet/接口
+				type:'GET',
+				data:{id:id},
+				dataType:'json',
+				success:function(res){
+					if (res.code === 0 || res.success) {  // 假设后端返回成功状态
+						// 核心：使用 layui 的 form.val 快速将数据填充到表单中
+						// 要求 res.data 的字段名必须和 form 表单里 input 的 name 对应
+						form.val("editForm", res.data)
+						$('#userId').val(res.data.id)
+						$('#L_email').val(res.data.email)
+						$('#L_username').val(res.data.username)
+					} else {
+						layer.msg(res.msg || "获取用户信息失败", {icon: 2})
+					}
+				},error:function(){
+					layer.msg("请求后端接口失败", {icon: 2})
+				}
+			})
+		} else {
+			// ================= 【新增模式】 =================
+			// 1. 移除用户名和邮箱的只读属性，允许输入
+			$('#L_email').removeAttr('readonly')
+			$('#L_username').removeAttr('readonly')
+			// 2. 动态注入密码输入框（新增用户必须有密码）
+			var passwordHtml = `
+				<div class="layui-form-item" id="passwordItem">
+					<label for="L_pass" class="layui-form-label">
+						<span class="x-red">*</span>初始密码
+					</label>
+					<div class="layui-input-inline">
+						<input type="password" id="L_pass" name="password" required="" lay-verify="required" autocomplete="off" class="layui-input">
+					</div>
+				</div>`
+			// 将密码框插在表单最前面
+			$('#name').prepend(passwordHtml)
+		}
+
+		// 自定义验证规则
+		form.verify({
+			nikename: function(value) {
+				if (value.length < 5) {
+					return '昵称至少得5个字符啊'
+				}
+			},
+			pass: [/(.+){6,12}$/, '密码必须6到12位'],
+			repass: function(value) {
+				if ($('#L_pass').val() != $('#L_repass').val()) {
+					return '两次密码不一致'
+				}
+			}
+		})
+
+		// 3. 监听表单提交（异步更新）
+		form.on('submit(update)', function(data) {
+			var isUpdate = (id !== '' && id !== 'false' && id !== null && id !== undefined)
+
+			// 动态处理 id：修改时带上 id，新增时彻底删掉 id 字段
+			if (isUpdate) {
+				data.field.id = id
+			} else {
+				delete data.field.id
+				if (data.field.hasOwnProperty('id')) {
+					data.field.id = undefined
+					window.Reflect ? Reflect.deleteProperty(data.field,'id') : ''
+				}
+				$('#userId').val('')
+			}
+
+			var requestUrl = isUpdate ? './user_update' : './user_add'
+			var successMsg = isUpdate ? "修改成功！" : "添加成功！"
+
+			console.log("提交的目标接口：", requestUrl)
+			console.log("提交的数据：", data.field)
+
+			$.ajax({
+				url: requestUrl,
+				type: 'POST',
+				data: data.field,
+				dataType: 'json',
+				success: function(res) {
+					if (res.code === 0 || res.success) {
+						layer.alert(successMsg, {
+							icon: 6
+						}, function() {
+							var index = parent.layer.getFrameIndex(window.name)
+							parent.layer.close(index)
+							parent.layui.table.reload('test')
+						})
+					} else {
+						layer.msg(res.msg || "操作失败", { icon: 2 })
+					}
+				},
+				error: function() {
+					layer.msg("请求后端接口失败", { icon: 2 })
+				}
+			})
+			return false
+		})
+	})
+</script>
+</html>

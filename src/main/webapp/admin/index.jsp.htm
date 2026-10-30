@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv=Content-Type content='text/html; charset=UTF-8'>
+	<title>后台管理</title>
+	<link rel="stylesheet" href="../css/bootstrap.css"/>
+	<style>
+		.content-iframe {
+			width: 100%;
+			height: calc(100vh - 80px);
+			border: none;
+			display: block;
+		}
+		body {
+			margin: 0;
+			padding: 0;
+			overflow-x: hidden;
+		}
+	</style>
+</head>
+<body>
+<div class="container-fluid">
+	<nav class="navbar navbar-default" role="navigation">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="index.jsp.htm" tppabs="http://localhost:8080/admin/index.jsp">蛋糕店后台</a>
+			</div>
+			<div>
+				<ul class="nav navbar-nav">
+					<li><a href="order_list.htm" target="mainFrame">订单管理</a></li>
+					<li><a href="member-list1.html" target="mainFrame">客户管理</a></li>
+					<li><a href="goods_list.htm" target="mainFrame">商品管理</a></li>
+					<li><a href="type_list.htm" target="mainFrame">类目管理</a></li>
+					<li>
+						<a href="/user_logout">退出</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<iframe name="mainFrame" id="mainFrame" src="index.jsp" class="content-iframe" title="主内容区"></iframe>
+	<div class="alert alert-success" role="alert">恭喜你! 登录成功了</div>
+</div>
+</body>
+</html>

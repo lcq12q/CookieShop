@@ -1,0 +1,117 @@
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>商品编辑</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="css/bootstrap.css" tppabs="http://localhost:8080/admin/css/bootstrap.css" />
+</head>
+<body>
+<div class="container-fluid">
+
+	
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="index.jsp.htm" tppabs="http://localhost:8080/admin/index.jsp">蛋糕店后台</a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav">
+                <li ><a href="order_list.htm" tppabs="http://localhost:8080/admin/order_list">订单管理</a></li>
+                <li ><a href="user_list.htm" tppabs="http://localhost:8080/admin/user_list">客户管理</a></li>
+                <li ><a href="goods_list.htm" tppabs="http://localhost:8080/admin/goods_list">商品管理</a></li>
+                <li ><a href="type_list.htm" tppabs="http://localhost:8080/admin/type_list">类目管理</a></li>
+                <li><a href="javascript:if(confirm(%27http://localhost:8080/user_logout  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/user_logout%27" tppabs="http://localhost:8080/user_logout">退出</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+	<br><br>
+	<form class="form-horizontal" action="http://localhost:8080/admin/goods_edit" method="post" enctype="multipart/form-data">
+		<input type="hidden" name="id" value="24"/>
+		<input type="hidden" name="cover" value="/picture/10-1.jpg"/>
+		<input type="hidden" name="image1" value="/picture/10-2.jpg"/>
+		<input type="hidden" name="image2" value="/picture/10-3.jpg"/>
+		<input type="hidden" name="pageNo" value=""/>
+		<input type="hidden" name="type" value="0"/>
+		<div class="form-group">
+			<label for="input_name" class="col-sm-1 control-label">名称</label>
+			<div class="col-sm-6">
+				<input type="text" class="form-control" id="input_name" name="name" value="玫瑰舒芙蕾" required="required">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="input_name" class="col-sm-1 control-label">价格</label>
+			<div class="col-sm-6">
+				<input type="text" class="form-control" id="input_name" name="price" value="28.0">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="input_name" class="col-sm-1 control-label">介绍</label>
+			<div class="col-sm-6">
+				<input type="text" class="form-control" id="input_name" name="intro" value="优选法国芝士,奶香浓郁,质地柔滑,口感细腻.法国芝士有助于提升糕点的整体口感,完美平衡酸度与甜味,制作出的糕点更加洁白纯美.">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="input_name" class="col-sm-1 control-label">库存</label>
+			<div class="col-sm-6">
+				<input type="text" class="form-control" id="input_name" name="stock" value="10">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="input_file" class="col-sm-1 control-label">封面图片</label>
+			<div class="col-sm-6"><img src="../picture/10-1.jpg" tppabs="http://localhost:8080/picture/10-1.jpg" width="100" height="100"/>
+				<input type="file" name="cover"  id="input_file">推荐尺寸: 500 * 500
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="input_file" class="col-sm-1 control-label">详情图片1</label>
+			<div class="col-sm-6"><img src="../picture/10-2.jpg" tppabs="http://localhost:8080/picture/10-2.jpg" width="100" height="100"/>
+				<input type="file" name="image1"  id="input_file">推荐尺寸: 500 * 500
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="input_file" class="col-sm-1 control-label">详情图片2</label>
+			<div class="col-sm-6"><img src="../picture/10-3.jpg" tppabs="http://localhost:8080/picture/10-3.jpg" width="100" height="100"/>
+				<input type="file" name="image2"  id="input_file">推荐尺寸: 500 * 500
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="select_topic" class="col-sm-1 control-label">类目</label>
+			<div class="col-sm-6">
+				<select class="form-control" id="select_topic" name="typeid">
+
+					
+						<option  value="1">冰淇淋系列</option>
+					
+						<option selected="selected" value="2">零食系列</option>
+					
+						<option  value="3">儿童系列</option>
+					
+						<option  value="4">法式系列</option>
+					
+						<option  value="5">经典系列</option>
+					
+						<option  value="8">节日系列</option>
+					
+						<option  value="11">买不起系列</option>
+					
+
+				</select>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-offset-1 col-sm-10">
+				<button type="submit" class="btn btn-success">提交修改</button>
+			</div>
+		</div>
+	</form>
+</div>
+</body>
+</html>

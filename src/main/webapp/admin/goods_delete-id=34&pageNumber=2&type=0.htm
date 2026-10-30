@@ -1,0 +1,359 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>商品列表</title>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" href="css/bootstrap.css" tppabs="http://localhost:8080/admin/css/bootstrap.css"/>
+</head>
+<body>
+<div class="container-fluid">
+
+	
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="index.jsp.htm" tppabs="http://localhost:8080/admin/index.jsp">蛋糕店后台</a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav">
+                <li ><a href="order_list.htm" tppabs="http://localhost:8080/admin/order_list">订单管理</a></li>
+                <li ><a href="user_list.htm" tppabs="http://localhost:8080/admin/user_list">客户管理</a></li>
+                <li ><a href="goods_list.htm" tppabs="http://localhost:8080/admin/goods_list">商品管理</a></li>
+                <li ><a href="type_list.htm" tppabs="http://localhost:8080/admin/type_list">类目管理</a></li>
+                <li><a href="javascript:if(confirm(%27http://localhost:8080/user_logout  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/user_logout%27" tppabs="http://localhost:8080/user_logout">退出</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+	<div class="text-right"><a class="btn btn-warning" href="goods_add.jsp.htm" tppabs="http://localhost:8080/admin/goods_add.jsp">添加商品</a></div>
+
+	<br>
+
+	<ul role="tablist" class="nav nav-tabs">
+		<li class="active" role="presentation"><a href="goods_list.htm" tppabs="http://localhost:8080/admin/goods_list">全部商品</a></li>
+		<li  role="presentation"><a href="goods_list-type=1.htm" tppabs="http://localhost:8080/admin/goods_list?type=1">条幅推荐</a></li>
+		<li  role="presentation"><a href="goods_list-type=2.htm" tppabs="http://localhost:8080/admin/goods_list?type=2">热销推荐</a></li>
+		<li  role="presentation"><a href="goods_list-type=3.htm" tppabs="http://localhost:8080/admin/goods_list?type=3">新品推荐</a></li>
+	</ul>
+
+
+
+
+
+	<br>
+
+	<table class="table table-bordered table-hover">
+
+		<tr>
+			<th width="5%">ID</th>
+			<th width="10%">图片</th>
+			<th width="10%">名称</th>
+			<th width="20%">介绍</th>
+			<th width="10%">价格</th>
+			<th width="10%">类目</th>
+			<th width="25%">操作</th>
+		</tr>
+
+		
+			<tr>
+				<td><p>44</p></td>
+				<td><p><a href="javascript:if(confirm(%27http://localhost:8080/goods_detail?id=44  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/goods_detail?id=44%27" tppabs="http://localhost:8080/goods_detail?id=44" target="_blank"><img src="../picture/9-1.jpg" tppabs="http://localhost:8080/picture/9-1.jpg" width="100px" height="100px"></a></p></td>
+				<td><p><a href="javascript:if(confirm(%27http://localhost:8080/goods_detail?id=44  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/goods_detail?id=44%27" tppabs="http://localhost:8080/goods_detail?id=44" target="_blank">草莓冰淇淋</a></p></td>
+				<td><p>甜郁草莓配合冰淇淋的丝滑口感,让清爽与浪漫在爱情果园激情碰撞,恋上草莓,这份心情,美妙非凡.
+主口味:草莓口味 主要原料:草莓果溶 草莓  甜度:三星（满五星） 最佳食用温度：-12至-15摄氏度</p></td>
+				<td><p>299.0</p></td>
+				<td><p>冰淇淋系列</p></td>
+				<td>
+					<p>
+						
+							
+							
+								<a class="btn btn-primary" href="javascript:if(confirm(%27http://localhost:8080/admin/goods_recommend?id=44&method=add&typeTarget=1&pageNumber=2&type=0  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/admin/goods_recommend?id=44&method=add&typeTarget=1&pageNumber=2&type=0%27" tppabs="http://localhost:8080/admin/goods_recommend?id=44&method=add&typeTarget=1&pageNumber=2&type=0">加入条幅</a>
+							
+						
+						
+							
+							
+								<a class="btn btn-primary" href="javascript:if(confirm(%27http://localhost:8080/admin/goods_recommend?id=44&method=add&typeTarget=2&pageNumber=2&type=0  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/admin/goods_recommend?id=44&method=add&typeTarget=2&pageNumber=2&type=0%27" tppabs="http://localhost:8080/admin/goods_recommend?id=44&method=add&typeTarget=2&pageNumber=2&type=0">加入热销</a>
+							
+						
+						
+							
+							
+								<a class="btn btn-primary" href="javascript:if(confirm(%27http://localhost:8080/admin/goods_recommend?id=44&method=add&typeTarget=3&pageNumber=2&type=0  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/admin/goods_recommend?id=44&method=add&typeTarget=3&pageNumber=2&type=0%27" tppabs="http://localhost:8080/admin/goods_recommend?id=44&method=add&typeTarget=3&pageNumber=2&type=0">加入新品</a>
+							
+						
+
+					</p>
+					<a class="btn btn-success" href="javascript:if(confirm(%27http://localhost:8080/admin/goods_editshow?id=44& pageNumber=2&type=0  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/admin/goods_editshow?id=44& pageNumber=2&type=0%27" tppabs="http://localhost:8080/admin/goods_editshow?id=44& pageNumber=2&type=0">修改</a>
+					<a class="btn btn-danger" href="javascript:if(confirm(%27http://localhost:8080/admin/goods_delete?id=44&pageNumber=2&type=0  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/admin/goods_delete?id=44&pageNumber=2&type=0%27" tppabs="http://localhost:8080/admin/goods_delete?id=44&pageNumber=2&type=0">删除</a>
+				</td>
+			</tr>
+		
+			<tr>
+				<td><p>45</p></td>
+				<td><p><a href="javascript:if(confirm(%27http://localhost:8080/goods_detail?id=45  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/goods_detail?id=45%27" tppabs="http://localhost:8080/goods_detail?id=45" target="_blank"><img src="../picture/10-1.jpg" tppabs="http://localhost:8080/picture/10-1.jpg" width="100px" height="100px"></a></p></td>
+				<td><p><a href="javascript:if(confirm(%27http://localhost:8080/goods_detail?id=45  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/goods_detail?id=45%27" tppabs="http://localhost:8080/goods_detail?id=45" target="_blank">玫瑰舒芙蕾</a></p></td>
+				<td><p>优选法国芝士,奶香浓郁,质地柔滑,口感细腻.法国芝士有助于提升糕点的整体口感,完美平衡酸度与甜味,制作出的糕点更加洁白纯美.</p></td>
+				<td><p>28.0</p></td>
+				<td><p>买不起系列</p></td>
+				<td>
+					<p>
+						
+							
+							
+								<a class="btn btn-primary" href="javascript:if(confirm(%27http://localhost:8080/admin/goods_recommend?id=45&method=add&typeTarget=1&pageNumber=2&type=0  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/admin/goods_recommend?id=45&method=add&typeTarget=1&pageNumber=2&type=0%27" tppabs="http://localhost:8080/admin/goods_recommend?id=45&method=add&typeTarget=1&pageNumber=2&type=0">加入条幅</a>
+							
+						
+						
+							
+							
+								<a class="btn btn-primary" href="javascript:if(confirm(%27http://localhost:8080/admin/goods_recommend?id=45&method=add&typeTarget=2&pageNumber=2&type=0  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/admin/goods_recommend?id=45&method=add&typeTarget=2&pageNumber=2&type=0%27" tppabs="http://localhost:8080/admin/goods_recommend?id=45&method=add&typeTarget=2&pageNumber=2&type=0">加入热销</a>
+							
+						
+						
+							
+							
+								<a class="btn btn-primary" href="javascript:if(confirm(%27http://localhost:8080/admin/goods_recommend?id=45&method=add&typeTarget=3&pageNumber=2&type=0  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/admin/goods_recommend?id=45&method=add&typeTarget=3&pageNumber=2&type=0%27" tppabs="http://localhost:8080/admin/goods_recommend?id=45&method=add&typeTarget=3&pageNumber=2&type=0">加入新品</a>
+							
+						
+
+					</p>
+					<a class="btn btn-success" href="javascript:if(confirm(%27http://localhost:8080/admin/goods_editshow?id=45& pageNumber=2&type=0  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/admin/goods_editshow?id=45& pageNumber=2&type=0%27" tppabs="http://localhost:8080/admin/goods_editshow?id=45& pageNumber=2&type=0">修改</a>
+					<a class="btn btn-danger" href="javascript:if(confirm(%27http://localhost:8080/admin/goods_delete?id=45&pageNumber=2&type=0  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/admin/goods_delete?id=45&pageNumber=2&type=0%27" tppabs="http://localhost:8080/admin/goods_delete?id=45&pageNumber=2&type=0">删除</a>
+				</td>
+			</tr>
+		
+			<tr>
+				<td><p>46</p></td>
+				<td><p><a href="javascript:if(confirm(%27http://localhost:8080/goods_detail?id=46  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/goods_detail?id=46%27" tppabs="http://localhost:8080/goods_detail?id=46" target="_blank"><img src="../picture/11-1.jpg" tppabs="http://localhost:8080/picture/11-1.jpg" width="100px" height="100px"></a></p></td>
+				<td><p><a href="javascript:if(confirm(%27http://localhost:8080/goods_detail?id=46  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/goods_detail?id=46%27" tppabs="http://localhost:8080/goods_detail?id=46" target="_blank">半熟芝士</a></p></td>
+				<td><p>为了保证芝士的香醇,半熟芝士借鉴日本温泉煮鸡蛋的做法,把芝士,牛奶,鸡蛋,天然奶油,砂糖,小麦粉拌成面糊,通过水浴蒸烤,保证芝士蛋糕细嫩,柔软,留住芝士的香醇细滑.</p></td>
+				<td><p>38.0</p></td>
+				<td><p>零食系列</p></td>
+				<td>
+					<p>
+						
+							
+							
+								<a class="btn btn-primary" href="javascript:if(confirm(%27http://localhost:8080/admin/goods_recommend?id=46&method=add&typeTarget=1&pageNumber=2&type=0  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/admin/goods_recommend?id=46&method=add&typeTarget=1&pageNumber=2&type=0%27" tppabs="http://localhost:8080/admin/goods_recommend?id=46&method=add&typeTarget=1&pageNumber=2&type=0">加入条幅</a>
+							
+						
+						
+							
+							
+								<a class="btn btn-primary" href="javascript:if(confirm(%27http://localhost:8080/admin/goods_recommend?id=46&method=add&typeTarget=2&pageNumber=2&type=0  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/admin/goods_recommend?id=46&method=add&typeTarget=2&pageNumber=2&type=0%27" tppabs="http://localhost:8080/admin/goods_recommend?id=46&method=add&typeTarget=2&pageNumber=2&type=0">加入热销</a>
+							
+						
+						
+							
+							
+								<a class="btn btn-primary" href="javascript:if(confirm(%27http://localhost:8080/admin/goods_recommend?id=46&method=add&typeTarget=3&pageNumber=2&type=0  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/admin/goods_recommend?id=46&method=add&typeTarget=3&pageNumber=2&type=0%27" tppabs="http://localhost:8080/admin/goods_recommend?id=46&method=add&typeTarget=3&pageNumber=2&type=0">加入新品</a>
+							
+						
+
+					</p>
+					<a class="btn btn-success" href="javascript:if(confirm(%27http://localhost:8080/admin/goods_editshow?id=46& pageNumber=2&type=0  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/admin/goods_editshow?id=46& pageNumber=2&type=0%27" tppabs="http://localhost:8080/admin/goods_editshow?id=46& pageNumber=2&type=0">修改</a>
+					<a class="btn btn-danger" href="javascript:if(confirm(%27http://localhost:8080/admin/goods_delete?id=46&pageNumber=2&type=0  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/admin/goods_delete?id=46&pageNumber=2&type=0%27" tppabs="http://localhost:8080/admin/goods_delete?id=46&pageNumber=2&type=0">删除</a>
+				</td>
+			</tr>
+		
+			<tr>
+				<td><p>47</p></td>
+				<td><p><a href="javascript:if(confirm(%27http://localhost:8080/goods_detail?id=47  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/goods_detail?id=47%27" tppabs="http://localhost:8080/goods_detail?id=47" target="_blank"><img src="../picture/12-1.jpg" tppabs="http://localhost:8080/picture/12-1.jpg" width="100px" height="100px"></a></p></td>
+				<td><p><a href="javascript:if(confirm(%27http://localhost:8080/goods_detail?id=47  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/goods_detail?id=47%27" tppabs="http://localhost:8080/goods_detail?id=47" target="_blank">青森芝士条</a></p></td>
+				<td><p>青森芝士和风轻拂,,奶香浓郁,质地柔滑,口感细腻.</p></td>
+				<td><p>36.0</p></td>
+				<td><p>节日系列</p></td>
+				<td>
+					<p>
+						
+							
+							
+								<a class="btn btn-primary" href="javascript:if(confirm(%27http://localhost:8080/admin/goods_recommend?id=47&method=add&typeTarget=1&pageNumber=2&type=0  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/admin/goods_recommend?id=47&method=add&typeTarget=1&pageNumber=2&type=0%27" tppabs="http://localhost:8080/admin/goods_recommend?id=47&method=add&typeTarget=1&pageNumber=2&type=0">加入条幅</a>
+							
+						
+						
+							
+							
+								<a class="btn btn-primary" href="javascript:if(confirm(%27http://localhost:8080/admin/goods_recommend?id=47&method=add&typeTarget=2&pageNumber=2&type=0  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/admin/goods_recommend?id=47&method=add&typeTarget=2&pageNumber=2&type=0%27" tppabs="http://localhost:8080/admin/goods_recommend?id=47&method=add&typeTarget=2&pageNumber=2&type=0">加入热销</a>
+							
+						
+						
+							
+							
+								<a class="btn btn-primary" href="javascript:if(confirm(%27http://localhost:8080/admin/goods_recommend?id=47&method=add&typeTarget=3&pageNumber=2&type=0  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/admin/goods_recommend?id=47&method=add&typeTarget=3&pageNumber=2&type=0%27" tppabs="http://localhost:8080/admin/goods_recommend?id=47&method=add&typeTarget=3&pageNumber=2&type=0">加入新品</a>
+							
+						
+
+					</p>
+					<a class="btn btn-success" href="javascript:if(confirm(%27http://localhost:8080/admin/goods_editshow?id=47& pageNumber=2&type=0  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/admin/goods_editshow?id=47& pageNumber=2&type=0%27" tppabs="http://localhost:8080/admin/goods_editshow?id=47& pageNumber=2&type=0">修改</a>
+					<a class="btn btn-danger" href="javascript:if(confirm(%27http://localhost:8080/admin/goods_delete?id=47&pageNumber=2&type=0  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/admin/goods_delete?id=47&pageNumber=2&type=0%27" tppabs="http://localhost:8080/admin/goods_delete?id=47&pageNumber=2&type=0">删除</a>
+				</td>
+			</tr>
+		
+			<tr>
+				<td><p>48</p></td>
+				<td><p><a href="javascript:if(confirm(%27http://localhost:8080/goods_detail?id=48  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/goods_detail?id=48%27" tppabs="http://localhost:8080/goods_detail?id=48" target="_blank"><img src="../picture/13-1.jpg" tppabs="http://localhost:8080/picture/13-1.jpg" width="100px" height="100px"></a></p></td>
+				<td><p><a href="javascript:if(confirm(%27http://localhost:8080/goods_detail?id=48  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/goods_detail?id=48%27" tppabs="http://localhost:8080/goods_detail?id=48" target="_blank">蜂蜜蛋糕</a></p></td>
+				<td><p>蛋黄与蜂蜜,淡奶油共同演绎的曼妙之旅.口感Q糯浓郁,回味绵软柔长.皱巴巴的造型,甜蜜蜜的感受.</p></td>
+				<td><p>36.0</p></td>
+				<td><p>零食系列</p></td>
+				<td>
+					<p>
+						
+							
+							
+								<a class="btn btn-primary" href="javascript:if(confirm(%27http://localhost:8080/admin/goods_recommend?id=48&method=add&typeTarget=1&pageNumber=2&type=0  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/admin/goods_recommend?id=48&method=add&typeTarget=1&pageNumber=2&type=0%27" tppabs="http://localhost:8080/admin/goods_recommend?id=48&method=add&typeTarget=1&pageNumber=2&type=0">加入条幅</a>
+							
+						
+						
+							
+							
+								<a class="btn btn-primary" href="javascript:if(confirm(%27http://localhost:8080/admin/goods_recommend?id=48&method=add&typeTarget=2&pageNumber=2&type=0  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/admin/goods_recommend?id=48&method=add&typeTarget=2&pageNumber=2&type=0%27" tppabs="http://localhost:8080/admin/goods_recommend?id=48&method=add&typeTarget=2&pageNumber=2&type=0">加入热销</a>
+							
+						
+						
+							
+							
+								<a class="btn btn-primary" href="javascript:if(confirm(%27http://localhost:8080/admin/goods_recommend?id=48&method=add&typeTarget=3&pageNumber=2&type=0  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/admin/goods_recommend?id=48&method=add&typeTarget=3&pageNumber=2&type=0%27" tppabs="http://localhost:8080/admin/goods_recommend?id=48&method=add&typeTarget=3&pageNumber=2&type=0">加入新品</a>
+							
+						
+
+					</p>
+					<a class="btn btn-success" href="javascript:if(confirm(%27http://localhost:8080/admin/goods_editshow?id=48& pageNumber=2&type=0  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/admin/goods_editshow?id=48& pageNumber=2&type=0%27" tppabs="http://localhost:8080/admin/goods_editshow?id=48& pageNumber=2&type=0">修改</a>
+					<a class="btn btn-danger" href="javascript:if(confirm(%27http://localhost:8080/admin/goods_delete?id=48&pageNumber=2&type=0  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/admin/goods_delete?id=48&pageNumber=2&type=0%27" tppabs="http://localhost:8080/admin/goods_delete?id=48&pageNumber=2&type=0">删除</a>
+				</td>
+			</tr>
+		
+			<tr>
+				<td><p>49</p></td>
+				<td><p><a href="javascript:if(confirm(%27http://localhost:8080/goods_detail?id=49  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/goods_detail?id=49%27" tppabs="http://localhost:8080/goods_detail?id=49" target="_blank"><img src="../picture/14-1.jpg" tppabs="http://localhost:8080/picture/14-1.jpg" width="100px" height="100px"></a></p></td>
+				<td><p><a href="javascript:if(confirm(%27http://localhost:8080/goods_detail?id=49  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/goods_detail?id=49%27" tppabs="http://localhost:8080/goods_detail?id=49" target="_blank">意大利芝士饼干</a></p></td>
+				<td><p>采用帕玛森芝士为主要原材料制作的意大利芝士饼,奶香浓郁,鲜香可口.</p></td>
+				<td><p>39.0</p></td>
+				<td><p>节日系列</p></td>
+				<td>
+					<p>
+						
+							
+							
+								<a class="btn btn-primary" href="javascript:if(confirm(%27http://localhost:8080/admin/goods_recommend?id=49&method=add&typeTarget=1&pageNumber=2&type=0  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/admin/goods_recommend?id=49&method=add&typeTarget=1&pageNumber=2&type=0%27" tppabs="http://localhost:8080/admin/goods_recommend?id=49&method=add&typeTarget=1&pageNumber=2&type=0">加入条幅</a>
+							
+						
+						
+							
+							
+								<a class="btn btn-primary" href="javascript:if(confirm(%27http://localhost:8080/admin/goods_recommend?id=49&method=add&typeTarget=2&pageNumber=2&type=0  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/admin/goods_recommend?id=49&method=add&typeTarget=2&pageNumber=2&type=0%27" tppabs="http://localhost:8080/admin/goods_recommend?id=49&method=add&typeTarget=2&pageNumber=2&type=0">加入热销</a>
+							
+						
+						
+							
+							
+								<a class="btn btn-primary" href="javascript:if(confirm(%27http://localhost:8080/admin/goods_recommend?id=49&method=add&typeTarget=3&pageNumber=2&type=0  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/admin/goods_recommend?id=49&method=add&typeTarget=3&pageNumber=2&type=0%27" tppabs="http://localhost:8080/admin/goods_recommend?id=49&method=add&typeTarget=3&pageNumber=2&type=0">加入新品</a>
+							
+						
+
+					</p>
+					<a class="btn btn-success" href="javascript:if(confirm(%27http://localhost:8080/admin/goods_editshow?id=49& pageNumber=2&type=0  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/admin/goods_editshow?id=49& pageNumber=2&type=0%27" tppabs="http://localhost:8080/admin/goods_editshow?id=49& pageNumber=2&type=0">修改</a>
+					<a class="btn btn-danger" href="javascript:if(confirm(%27http://localhost:8080/admin/goods_delete?id=49&pageNumber=2&type=0  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/admin/goods_delete?id=49&pageNumber=2&type=0%27" tppabs="http://localhost:8080/admin/goods_delete?id=49&pageNumber=2&type=0">删除</a>
+				</td>
+			</tr>
+		
+			<tr>
+				<td><p>50</p></td>
+				<td><p><a href="javascript:if(confirm(%27http://localhost:8080/goods_detail?id=50  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/goods_detail?id=50%27" tppabs="http://localhost:8080/goods_detail?id=50" target="_blank"><img src="../picture/8-1.jpg" tppabs="http://localhost:8080/picture/8-1.jpg" width="100px" height="100px"></a></p></td>
+				<td><p><a href="javascript:if(confirm(%27http://localhost:8080/goods_detail?id=50  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/goods_detail?id=50%27" tppabs="http://localhost:8080/goods_detail?id=50" target="_blank">小熊乐园</a></p></td>
+				<td><p>走进小熊乐园,与可爱的小熊一起准备过冬的食物吧,摘颗草莓藏放在巧克力做的房子里,好朋友一起分享劳动的果实.
+主口味:草莓奶油味 主要原料:乳脂奶油,纯巧克力,朗姆酒,幼砂糖,鲜草莓 甜度:二星（满五星） 最佳食用温度：5-7摄氏度</p></td>
+				<td><p>299.0</p></td>
+				<td><p>儿童系列</p></td>
+				<td>
+					<p>
+						
+							
+							
+								<a class="btn btn-primary" href="javascript:if(confirm(%27http://localhost:8080/admin/goods_recommend?id=50&method=add&typeTarget=1&pageNumber=2&type=0  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/admin/goods_recommend?id=50&method=add&typeTarget=1&pageNumber=2&type=0%27" tppabs="http://localhost:8080/admin/goods_recommend?id=50&method=add&typeTarget=1&pageNumber=2&type=0">加入条幅</a>
+							
+						
+						
+							
+							
+								<a class="btn btn-primary" href="javascript:if(confirm(%27http://localhost:8080/admin/goods_recommend?id=50&method=add&typeTarget=2&pageNumber=2&type=0  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/admin/goods_recommend?id=50&method=add&typeTarget=2&pageNumber=2&type=0%27" tppabs="http://localhost:8080/admin/goods_recommend?id=50&method=add&typeTarget=2&pageNumber=2&type=0">加入热销</a>
+							
+						
+						
+							
+							
+								<a class="btn btn-primary" href="javascript:if(confirm(%27http://localhost:8080/admin/goods_recommend?id=50&method=add&typeTarget=3&pageNumber=2&type=0  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/admin/goods_recommend?id=50&method=add&typeTarget=3&pageNumber=2&type=0%27" tppabs="http://localhost:8080/admin/goods_recommend?id=50&method=add&typeTarget=3&pageNumber=2&type=0">加入新品</a>
+							
+						
+
+					</p>
+					<a class="btn btn-success" href="javascript:if(confirm(%27http://localhost:8080/admin/goods_editshow?id=50& pageNumber=2&type=0  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/admin/goods_editshow?id=50& pageNumber=2&type=0%27" tppabs="http://localhost:8080/admin/goods_editshow?id=50& pageNumber=2&type=0">修改</a>
+					<a class="btn btn-danger" href="javascript:if(confirm(%27http://localhost:8080/admin/goods_delete?id=50&pageNumber=2&type=0  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/admin/goods_delete?id=50&pageNumber=2&type=0%27" tppabs="http://localhost:8080/admin/goods_delete?id=50&pageNumber=2&type=0">删除</a>
+				</td>
+			</tr>
+		
+			<tr>
+				<td><p>51</p></td>
+				<td><p><a href="javascript:if(confirm(%27http://localhost:8080/goods_detail?id=51  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/goods_detail?id=51%27" tppabs="http://localhost:8080/goods_detail?id=51" target="_blank"><img src="../picture/9-1.jpg" tppabs="http://localhost:8080/picture/9-1.jpg" width="100px" height="100px"></a></p></td>
+				<td><p><a href="javascript:if(confirm(%27http://localhost:8080/goods_detail?id=51  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/goods_detail?id=51%27" tppabs="http://localhost:8080/goods_detail?id=51" target="_blank">草莓冰淇淋</a></p></td>
+				<td><p>甜郁草莓配合冰淇淋的丝滑口感,让清爽与浪漫在爱情果园激情碰撞,恋上草莓,这份心情,美妙非凡.
+主口味:草莓口味 主要原料:草莓果溶 草莓  甜度:三星（满五星） 最佳食用温度：-12至-15摄氏度</p></td>
+				<td><p>299.0</p></td>
+				<td><p>冰淇淋系列</p></td>
+				<td>
+					<p>
+						
+							
+							
+								<a class="btn btn-primary" href="javascript:if(confirm(%27http://localhost:8080/admin/goods_recommend?id=51&method=add&typeTarget=1&pageNumber=2&type=0  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/admin/goods_recommend?id=51&method=add&typeTarget=1&pageNumber=2&type=0%27" tppabs="http://localhost:8080/admin/goods_recommend?id=51&method=add&typeTarget=1&pageNumber=2&type=0">加入条幅</a>
+							
+						
+						
+							
+							
+								<a class="btn btn-primary" href="javascript:if(confirm(%27http://localhost:8080/admin/goods_recommend?id=51&method=add&typeTarget=2&pageNumber=2&type=0  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/admin/goods_recommend?id=51&method=add&typeTarget=2&pageNumber=2&type=0%27" tppabs="http://localhost:8080/admin/goods_recommend?id=51&method=add&typeTarget=2&pageNumber=2&type=0">加入热销</a>
+							
+						
+						
+							
+							
+								<a class="btn btn-primary" href="javascript:if(confirm(%27http://localhost:8080/admin/goods_recommend?id=51&method=add&typeTarget=3&pageNumber=2&type=0  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/admin/goods_recommend?id=51&method=add&typeTarget=3&pageNumber=2&type=0%27" tppabs="http://localhost:8080/admin/goods_recommend?id=51&method=add&typeTarget=3&pageNumber=2&type=0">加入新品</a>
+							
+						
+
+					</p>
+					<a class="btn btn-success" href="javascript:if(confirm(%27http://localhost:8080/admin/goods_editshow?id=51& pageNumber=2&type=0  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/admin/goods_editshow?id=51& pageNumber=2&type=0%27" tppabs="http://localhost:8080/admin/goods_editshow?id=51& pageNumber=2&type=0">修改</a>
+					<a class="btn btn-danger" href="javascript:if(confirm(%27http://localhost:8080/admin/goods_delete?id=51&pageNumber=2&type=0  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/admin/goods_delete?id=51&pageNumber=2&type=0%27" tppabs="http://localhost:8080/admin/goods_delete?id=51&pageNumber=2&type=0">删除</a>
+				</td>
+			</tr>
+		
+
+
+	</table>
+
+	<br>
+	
+
+
+<div style='text-align:center;'>
+    <a class='btn btn-info'     href="goods_list-pageNumber=1&type=0.htm" tppabs="http://localhost:8080/admin/goods_list?pageNumber=1&type=0">首页</a>
+    <a class='btn btn-info'  href="goods_list-pageNumber=1&type=0.htm" tppabs="http://localhost:8080/admin/goods_list?pageNumber=1&type=0">上一页</a>
+    <h3 style='display:inline;'>[2/18]</h3>
+    <h3 style='display:inline;'>[141]</h3>
+    <a class='btn btn-info'  href="goods_list-pageNumber=3&type=0.htm" tppabs="http://localhost:8080/admin/goods_list?pageNumber=3&type=0">下一页</a>
+    <a class='btn btn-info'  href="javascript:if(confirm(%27http://localhost:8080/admin/goods_list?pageNumber=18&type=0  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/admin/goods_list?pageNumber=18&type=0%27" tppabs="http://localhost:8080/admin/goods_list?pageNumber=18&type=0">尾页</a>
+    <input type='text' class='form-control' style='display:inline;width:60px;' value=''/><a class='btn btn-info' href='javascript:void(0);' onclick='location.href="goods_list-pageNumber=.htm"/*tpa=http://localhost:8080/admin/goods_list?pageNumber=*/+(this.previousSibling.value)+"&type=0"'>GO</a>
+</div>
+
+	<br>
+</div>
+</body>
+</html>

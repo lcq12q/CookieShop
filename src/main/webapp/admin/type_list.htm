@@ -1,0 +1,125 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>类目列表</title>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" href="css/bootstrap.css" tppabs="http://localhost:8080/admin/css/bootstrap.css"/>
+</head>
+<body>
+<div class="container-fluid">
+
+	
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="index.jsp.htm" tppabs="http://localhost:8080/admin/index.jsp">蛋糕店后台</a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav">
+                <li ><a href="order_list.htm" tppabs="http://localhost:8080/admin/order_list">订单管理</a></li>
+                <li ><a href="user_list.htm" tppabs="http://localhost:8080/admin/user_list">客户管理</a></li>
+                <li ><a href="goods_list.htm" tppabs="http://localhost:8080/admin/goods_list">商品管理</a></li>
+                <li ><a href="type_list.htm" tppabs="http://localhost:8080/admin/type_list">类目管理</a></li>
+                <li><a href="javascript:if(confirm(%27http://localhost:8080/user_logout  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/user_logout%27" tppabs="http://localhost:8080/user_logout">退出</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+	<br>
+
+	<div>
+		<form class="form-inline" method="post" action="http://localhost:8080/admin/type_add">
+			<input type="text" class="form-control" id="input_name" name="name" placeholder="输入类目名称" required="required" style="width: 500px">
+			<input type="submit" class="btn btn-warning" value="添加类目"/>
+		</form>
+	</div>
+	<br/>
+	
+	
+	<br>
+
+	<table class="table table-bordered table-hover">
+
+		<tr>
+			<th width="5%">ID</th>
+			<th width="10%">名称</th>
+			<th width="10%">操作</th>
+		</tr>
+
+		
+			<tr>
+				<td><p>1</p></td>
+				<td><p>冰淇淋系列</p></td>
+				<td>
+					<a class="btn btn-primary" href="type_edit.jsp-id=1&name=冰淇淋系列.htm" tppabs="http://localhost:8080/admin/type_edit.jsp?id=1&name=%E5%86%B0%E6%B7%87%E6%B7%8B%E7%B3%BB%E5%88%97">修改</a>
+					<a class="btn btn-danger" href="type_delete-id=1.htm" tppabs="http://localhost:8080/admin/type_delete?id=1">删除</a>
+				</td>
+			</tr>
+		
+			<tr>
+				<td><p>2</p></td>
+				<td><p>零食系列</p></td>
+				<td>
+					<a class="btn btn-primary" href="type_edit.jsp-id=2&name=零食系列.htm" tppabs="http://localhost:8080/admin/type_edit.jsp?id=2&name=%E9%9B%B6%E9%A3%9F%E7%B3%BB%E5%88%97">修改</a>
+					<a class="btn btn-danger" href="type_delete-id=2.htm" tppabs="http://localhost:8080/admin/type_delete?id=2">删除</a>
+				</td>
+			</tr>
+		
+			<tr>
+				<td><p>3</p></td>
+				<td><p>儿童系列</p></td>
+				<td>
+					<a class="btn btn-primary" href="type_edit.jsp-id=3&name=儿童系列.htm" tppabs="http://localhost:8080/admin/type_edit.jsp?id=3&name=%E5%84%BF%E7%AB%A5%E7%B3%BB%E5%88%97">修改</a>
+					<a class="btn btn-danger" href="type_delete-id=3.htm" tppabs="http://localhost:8080/admin/type_delete?id=3">删除</a>
+				</td>
+			</tr>
+		
+			<tr>
+				<td><p>4</p></td>
+				<td><p>法式系列</p></td>
+				<td>
+					<a class="btn btn-primary" href="type_edit.jsp-id=4&name=法式系列.htm" tppabs="http://localhost:8080/admin/type_edit.jsp?id=4&name=%E6%B3%95%E5%BC%8F%E7%B3%BB%E5%88%97">修改</a>
+					<a class="btn btn-danger" href="type_delete-id=4.htm" tppabs="http://localhost:8080/admin/type_delete?id=4">删除</a>
+				</td>
+			</tr>
+		
+			<tr>
+				<td><p>5</p></td>
+				<td><p>经典系列</p></td>
+				<td>
+					<a class="btn btn-primary" href="type_edit.jsp-id=5&name=经典系列.htm" tppabs="http://localhost:8080/admin/type_edit.jsp?id=5&name=%E7%BB%8F%E5%85%B8%E7%B3%BB%E5%88%97">修改</a>
+					<a class="btn btn-danger" href="type_delete-id=5.htm" tppabs="http://localhost:8080/admin/type_delete?id=5">删除</a>
+				</td>
+			</tr>
+		
+			<tr>
+				<td><p>8</p></td>
+				<td><p>节日系列</p></td>
+				<td>
+					<a class="btn btn-primary" href="type_edit.jsp-id=8&name=节日系列.htm" tppabs="http://localhost:8080/admin/type_edit.jsp?id=8&name=%E8%8A%82%E6%97%A5%E7%B3%BB%E5%88%97">修改</a>
+					<a class="btn btn-danger" href="type_delete-id=8.htm" tppabs="http://localhost:8080/admin/type_delete?id=8">删除</a>
+				</td>
+			</tr>
+		
+			<tr>
+				<td><p>11</p></td>
+				<td><p>买不起系列</p></td>
+				<td>
+					<a class="btn btn-primary" href="type_edit.jsp-id=11&name=买不起系列.htm" tppabs="http://localhost:8080/admin/type_edit.jsp?id=11&name=%E4%B9%B0%E4%B8%8D%E8%B5%B7%E7%B3%BB%E5%88%97">修改</a>
+					<a class="btn btn-danger" href="type_delete-id=11.htm" tppabs="http://localhost:8080/admin/type_delete?id=11">删除</a>
+				</td>
+			</tr>
+		
+
+
+	</table>
+
+</div>
+</body>
+</html>

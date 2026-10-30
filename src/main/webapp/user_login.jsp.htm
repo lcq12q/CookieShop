@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>用户登录</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.css">
+	<link type="text/css" rel="stylesheet" href="css/style.css">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/simpleCart.min.js"></script>
+	<script type="text/javascript" src="layer/layer.js"></script>
+	<link rel="stylesheet" href="layer/theme/default/layer.css" type="text/css">
+</head>
+<body>
+	<!--header-->
+<!--header-->
+<div class="header">
+    <div class="container">
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <h1 class="navbar-brand"><a href="index.htm"></a></h1>
+            </div>
+            <!--navbar-header-->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.htm">首页</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle " data-toggle="dropdown">商品分类<b class="caret"></b></a>
+                        <ul class="dropdown-menu multi-column columns-2">
+                            <li>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <h4>商品分类</h4>
+                                        <ul class="multi-column-dropdown">
+                                            <li><a class="list" href="goods_list.htm">全部系列</a></li>
+                                            <li><a class="list" href="goods_list-typeid=1.htm">冰淇淋系列</a></li>
+                                            <li><a class="list" href="goods_list-typeid=2.htm">零食系列</a></li>
+                                            <li><a class="list" href="goods_list-typeid=3.htm">儿童系列</a></li>
+                                            <li><a class="list" href="goods_list-typeid=4.htm">法式系列</a></li>
+                                            <li><a class="list" href="goods_list-typeid=5.htm">经典系列</a></li>
+                                            <li><a class="list" href="goods_list-typeid=8.htm">节日系列</a></li>
+                                            <li><a class="list" href="goods_list-typeid=11.htm">买不起系列</a></li>
+                                            <li><a class="list" href="goods_list-typeid=12.htm">中式系列</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="goodsrecommend_list-type=2.htm" >热销</a></li>
+                    <li><a href="goodsrecommend_list-type=3.htm" >新品</a></li>
+                    <li><a href="user_register.jsp.htm" >注册</a></li>
+                    <li><a href="user_login.jsp.htm" class="active">登录</a></li>
+                </ul>
+                <!--/.navbar-collapse-->
+            </div>
+            <!--//navbar-header-->
+        </nav>
+        <div class="header-info">
+            <div class="header-right search-box">
+                <a href="javascript:;"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
+                <div class="search">
+                    <form class="navbar-form" action="http://114.116.39.249:8080/goods_search">
+                        <input type="text" class="form-control" name="keyword">
+                        <button type="submit" class="btn btn-default " aria-label="Left Align">搜索</button>
+                    </form>
+                </div>
+            </div>
+            <div class="header-right cart">
+                <a href="goods_cart.jsp.htm">
+                    <span class="glyphicon glyphicon-shopping-cart " aria-hidden="true"><span class="card_num">0</span></span>
+                </a>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+</div>
+<!--//header-->
+	<!--//header-->
+	<!--account-->
+	<div class="account">
+		<div class="container">
+			<div class="register">
+				<form action="user_login" method="post">
+					<div class="register-top-grid">
+						<h3>用户登录</h3>
+						<div class="input">
+							<span>用户名/邮箱 <label style="color:red;">*</label></span>
+							<input type="text" name="ue" placeholder="请输入用户名" value="admin" required="required">
+						</div>
+						<div class="input">
+							<span>密码 <label style="color:red;">*</label></span>
+							<input type="password" name="password" placeholder="请输入密码"  value="admin"  required="required">
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<div class="register-but text-center">
+						<input type="submit" value="提交">
+						<div class="clearfix"> </div>
+					</div>
+				</form>
+				<div class="clearfix"> </div>
+			</div>
+	    </div>
+	</div>
+	<!--//account-->
+	<!--footer-->
+<!--footer-->
+<div class="footer">
+    <div class="container">
+        <div class="text-center">
+            <p>vili www.vilicode.com © All rights Reseverd</p>
+        </div>
+    </div>
+</div>
+<!--//footer-->
+	<!--//footer-->
+</body>
+</html>
+<script type="application/javascript" language="JavaScript">
+	$(document).ready(function () {
+		// 监听登录表单提交事件
+		$("form").on("submit", function (e) {
+			e.preventDefault()  // 注释表单默认刷新跳转
+			// 序列化表单数据
+			const form = $(this).serialize()
+			// 开启layer加载层
+			const lodingIndex = layer.load(2)
+			// 发送ajax异步请求
+			$.ajax({
+				url:"user_login",
+				type:"POST",
+				data:form,
+				dataType:"json",
+				success:function(res){
+					// 关闭加载层
+					layer.close(lodingIndex)
+					// 将返回结果转为数字状态码
+					// const code = Number(res.trim())
+					if (res.code === 1){
+						layer.msg(res.msg,{
+							icon: 1,    // 成功图标
+							time: 1500
+						}, function () {
+							if (res.isAdmin) {
+								window.location.href = 'admin/index.jsp.htm'
+							} else {
+								window.location.href = 'index.htm'
+							}
+						})
+					} else if (res.code ===  -1){
+						layer.msg("账号或密码不能为空",{
+							icon: 2,    // 错误失败图标
+							time: 2000
+						})
+					} else {
+						layer.msg(res.msg || "账号或密码错误",{
+							icon: 2,    // 错误失败图标
+							time: 2000
+						})
+					}
+				},error:function(){
+					layer.close(lodingIndex)
+					layer.msg("网络异常，请稍后重试",{
+						icon: 2,
+						time: 2000
+					})
+				}
+			})
+		})
+	})
+</script>

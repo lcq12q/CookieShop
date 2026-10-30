@@ -1,0 +1,84 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>商品列表</title>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" href="css/bootstrap.css" tppabs="http://localhost:8080/admin/css/bootstrap.css"/>
+</head>
+<body>
+<div class="container-fluid">
+
+	
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="index.jsp.htm" tppabs="http://localhost:8080/admin/index.jsp">蛋糕店后台</a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav">
+                <li ><a href="order_list.htm" tppabs="http://localhost:8080/admin/order_list">订单管理</a></li>
+                <li ><a href="user_list.htm" tppabs="http://localhost:8080/admin/user_list">客户管理</a></li>
+                <li ><a href="goods_list.htm" tppabs="http://localhost:8080/admin/goods_list">商品管理</a></li>
+                <li ><a href="type_list.htm" tppabs="http://localhost:8080/admin/type_list">类目管理</a></li>
+                <li><a href="javascript:if(confirm(%27http://localhost:8080/user_logout  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/user_logout%27" tppabs="http://localhost:8080/user_logout">退出</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+	<div class="text-right"><a class="btn btn-warning" href="goods_add.jsp.htm" tppabs="http://localhost:8080/admin/goods_add.jsp">添加商品</a></div>
+
+	<br>
+
+	<ul role="tablist" class="nav nav-tabs">
+		<li class="active" role="presentation"><a href="goods_list.htm" tppabs="http://localhost:8080/admin/goods_list">全部商品</a></li>
+		<li  role="presentation"><a href="goods_list-type=1.htm" tppabs="http://localhost:8080/admin/goods_list?type=1">条幅推荐</a></li>
+		<li  role="presentation"><a href="goods_list-type=2.htm" tppabs="http://localhost:8080/admin/goods_list?type=2">热销推荐</a></li>
+		<li  role="presentation"><a href="goods_list-type=3.htm" tppabs="http://localhost:8080/admin/goods_list?type=3">新品推荐</a></li>
+	</ul>
+
+
+
+
+
+	<br>
+
+	<table class="table table-bordered table-hover">
+
+		<tr>
+			<th width="5%">ID</th>
+			<th width="10%">图片</th>
+			<th width="10%">名称</th>
+			<th width="20%">介绍</th>
+			<th width="10%">价格</th>
+			<th width="10%">类目</th>
+			<th width="25%">操作</th>
+		</tr>
+
+		
+
+
+	</table>
+
+	<br>
+	
+
+
+<div style='text-align:center;'>
+    <a class='btn btn-info'     href="goods_list-pageNumber=1&type=0.htm" tppabs="http://localhost:8080/admin/goods_list?pageNumber=1&type=0">首页</a>
+    <a class='btn btn-info'  href="javascript:if(confirm(%27http://localhost:8080/admin/goods_list?pageNumber=19&type=0  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/admin/goods_list?pageNumber=19&type=0%27" tppabs="http://localhost:8080/admin/goods_list?pageNumber=19&type=0">上一页</a>
+    <h3 style='display:inline;'>[20/19]</h3>
+    <h3 style='display:inline;'>[151]</h3>
+    <a class='btn btn-info'  href="goods_list-pageNumber=21&type=0.htm" tppabs="http://localhost:8080/admin/goods_list?pageNumber=21&type=0">下一页</a>
+    <a class='btn btn-info'  href="javascript:if(confirm(%27http://localhost:8080/admin/goods_list?pageNumber=19&type=0  \n\nThis file was not retrieved by Teleport Ultra, because it is linked too far away from its Starting Address. If you increase the in-domain depth setting for the Starting Address, this file will be queued for retrieval.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/admin/goods_list?pageNumber=19&type=0%27" tppabs="http://localhost:8080/admin/goods_list?pageNumber=19&type=0">尾页</a>
+    <input type='text' class='form-control' style='display:inline;width:60px;' value=''/><a class='btn btn-info' href='javascript:void(0);' onclick='location.href="goods_list-pageNumber=.htm"/*tpa=http://localhost:8080/admin/goods_list?pageNumber=*/+(this.previousSibling.value)+"&type=0"'>GO</a>
+</div>
+
+	<br>
+</div>
+</body>
+</html>

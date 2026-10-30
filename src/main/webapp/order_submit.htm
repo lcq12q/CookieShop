@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)http://localhost:8080/CookieShop2403/order_submit -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>用户登录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link type="text/css" rel="stylesheet" href="./order_submit_files/bootstrap.css">
+    <link type="text/css" rel="stylesheet" href="./order_submit_files/style.css">
+    <script type="text/javascript" src="./order_submit_files/jquery.min.js.下载"></script>
+    <script type="text/javascript" src="./order_submit_files/bootstrap.min.js.下载"></script>
+    <script type="text/javascript" src="./order_submit_files/simpleCart.min.js.下载"></script>
+</head>
+<body>
+<!--header-->
+
+
+
+<div class="header">
+    <div class="container">
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <h1 class="navbar-brand"><a href="http://localhost:8080/CookieShop2403/index"></a></h1>
+            </div>
+            <!--navbar-header-->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="http://localhost:8080/CookieShop2403/index" class="active">首页</a></li>
+                    <li class="dropdown">
+                        <a href="http://localhost:8080/CookieShop2403/order_submit#" class="dropdown-toggle " data-toggle="dropdown">商品分类<b class="caret"></b></a>
+                        <ul class="dropdown-menu multi-column columns-2">
+                            <li>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <h4>商品分类</h4>
+                                        <ul class="multi-column-dropdown">
+
+                                            <li><a class="list" href="http://localhost:8080/CookieShop2403/goods_list">全部系列</a></li>
+
+                                            
+                                                <li><a class="list" href="http://localhost:8080/CookieShop2403/goods_list?typeid=1">冰淇淋系列</a></li>
+                                            
+                                                <li><a class="list" href="http://localhost:8080/CookieShop2403/goods_list?typeid=2">零食系列</a></li>
+                                            
+                                                <li><a class="list" href="http://localhost:8080/CookieShop2403/goods_list?typeid=3">儿童系列</a></li>
+                                            
+                                                <li><a class="list" href="http://localhost:8080/CookieShop2403/goods_list?typeid=4">法式系列</a></li>
+                                            
+                                                <li><a class="list" href="http://localhost:8080/CookieShop2403/goods_list?typeid=5">经典系列</a></li>
+                                            
+                                                <li><a class="list" href="http://localhost:8080/CookieShop2403/goods_list?typeid=8">节日系列</a></li>
+                                            
+                                                <li><a class="list" href="http://localhost:8080/CookieShop2403/goods_list?typeid=11">买不起系列</a></li>
+                                            
+                                                <li><a class="list" href="http://localhost:8080/CookieShop2403/goods_list?typeid=13">买不起系列2</a></li>
+                                            
+                                                <li><a class="list" href="http://localhost:8080/CookieShop2403/goods_list?typeid=15">sss</a></li>
+                                            
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="http://localhost:8080/CookieShop2403/goods_hot_new_list?type=2">热销</a></li>
+                    <li><a href="http://localhost:8080/CookieShop2403/goods_hot_new_list?type=3">新品</a></li>
+
+
+                    <li><a href="http://localhost:8080/CookieShop2403/user_register.jsp.htm">注册</a></li>
+                    <li><a href="http://localhost:8080/CookieShop2403/user_login.jsp">登录</a></li>
+
+                </ul>
+                <!--/.navbar-collapse-->
+            </div>
+            <!--//navbar-header-->
+        </nav>
+        <div class="header-info">
+            <div class="header-right search-box">
+                <a href="javascript:;"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
+                <div class="search">
+                    <form class="navbar-form" action="http://114.116.39.249:8080/goods_search">
+                        <input type="text" class="form-control" name="keyword">
+                        <button type="submit" class="btn btn-default " aria-label="Left Align">搜索</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="header-right cart">
+                <a href="http://localhost:8080/CookieShop2403/goods_cart.jsp">
+                    <span class="glyphicon glyphicon-shopping-cart " aria-hidden="true">
+                        <span class="card_num">
+                            1
+                        </span></span>
+                </a>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+</div>
+
+
+<!--//header-->
+<div class="cart-items">
+    <div class="container">
+        <h2>确认收货信息</h2>
+        <form class="form-horizontal" action="http://localhost:8080/CookieShop2403/order_confirm" method="post" id="payform">
+            <div class="row">
+                <label class="control-label col-md-1">收货人</label>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" name="name" value="管理员" style="height:auto;padding:10px;" placeholder="输入收货人" required="required"><br>
+                </div>
+            </div>
+            <div class="row">
+                <label class="control-label col-md-1">收货电话</label>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" name="phone" value="13873244259" style="height:auto;padding:10px;" placeholder="输入收货电话" required="required"><br>
+                </div>
+            </div>
+            <div class="row">
+                <label class="control-label col-md-1">收货地址</label>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" name="address" value="中国" style="height:auto;padding:10px;" placeholder="输入收货地址" required="required"><br>
+                </div>
+            </div>
+
+            <br><hr><br>
+
+            <h2>选择支付方式</h2>
+            <h3>支付金额: 38.0</h3><br><br>
+
+
+            <div class="col-sm-6 col-md-4 col-lg-3 ">
+                <label>
+                    <div class="thumbnail">
+                        <input type="radio" name="paytype" value="1" checked="checked">
+                        <img src="./order_submit_files/wechat.jpg" alt="微信支付">
+                    </div>
+                </label>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 ">
+                <label>
+                    <div class="thumbnail">
+                        <input type="radio" name="paytype" value="2">
+                        <img src="./order_submit_files/alipay.jpg" alt="支付宝支付">
+                    </div>
+                </label>
+            </div>
+
+            <div class="clearfix"> </div>
+            <div class="register-but text-center">
+                <input type="submit" value="确认订单">
+                <div class="clearfix"> </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!--footer-->
+
+
+<!--footer-->
+<div class="footer">
+    <div class="container">
+        <div class="text-center">
+            <p>vili www.vilicode.com © All rights Reseverd</p>
+        </div>
+    </div>
+</div>
+<!--//footer-->
+
+
+
+</body><div class="xl-chrome-ext-bar_4DB361DE-01F7-4376-B494-639E489D19ED" id="xl_chrome_ext_4DB361DE-01F7-4376-B494-639E489D19ED" data-v-app="" style="display: block;"><div class=""><div id="xl_chrome_ext_video_tag_wrapper_4DB361DE-01F7-4376-B494-639E489D19ED" config="[object Object]" uiversion="v2" exception="true" latestvideosrc="" isshowvideotag="false" isshowdownloadbar="true" isshowcloudaddbar="false"><div class="_video_op_wrapper_96mx8_1" config="[object Object]" uiversion="v2" style="display: none;"><ul class="_video_op_list_96mx8_17"><li class="_op_item_96mx8_39 _download_96mx8_45"><span class="_op_icon_96mx8_25"></span><span class="_op_text_96mx8_31">下载</span></li><li class="_op_item_96mx8_39 _screen_96mx8_51"><span class="_op_icon_96mx8_25"></span><span class="_op_text_96mx8_31">投屏</span></li></ul></div></div><div class="badge_wrapper_4DB361DE-01F7-4376-B494-639E489D19ED _badge_wrapper_eor63_1" id="badge_wrapper_4DB361DE-01F7-4376-B494-639E489D19ED"><div class="_logo_eor63_20"></div><span class="_line_eor63_27"></span><div class="_text_wrapper_eor63_33"><span class="_download_icon_eor63_39"></span><span class="_text_eor63_33">高速下载</span></div></div><!----><!----><!----><!----><div class="_container_wq4mj_4"><!----></div></div></div></html>

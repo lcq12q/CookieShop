@@ -1,0 +1,127 @@
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv=Content-Type content='text/html; charset=UTF-8'>
+
+<title>订单列表</title>
+<link rel="stylesheet" href="css/bootstrap.css" tppabs="http://localhost:8080/admin/css/bootstrap.css"/> 
+</head>
+<body>
+<div class="container-fluid">
+
+	
+
+
+
+
+	
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="index.jsp.htm" tppabs="http://localhost:8080/admin/index.jsp">蛋糕店后台</a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav">
+                <li ><a href="order_list.htm" tppabs="http://localhost:8080/admin/order_list">订单管理</a></li>
+                <li ><a href="user_list.htm" tppabs="http://localhost:8080/admin/user_list">客户管理</a></li>
+                <li ><a href="goods_list.htm" tppabs="http://localhost:8080/admin/goods_list">商品管理</a></li>
+                <li ><a href="type_list.htm" tppabs="http://localhost:8080/admin/type_list">类目管理</a></li>
+                <li><a href="javascript:if(confirm(%27http://localhost:8080/user_logout  \n\nThis file was not retrieved by Teleport Ultra, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://localhost:8080/user_logout%27" tppabs="http://localhost:8080/user_logout">退出</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+	<br>
+
+	<ul role="tablist" class="nav nav-tabs">
+		<li class="active" role="presentation"><a href="order_list.htm" tppabs="http://localhost:8080/admin/order_list">全部订单</a></li>
+		<li  role="presentation"><a href="order_list-status=1.htm" tppabs="http://localhost:8080/admin/order_list?status=1">未付款</a></li>
+		<li  role="presentation"><a href="order_list-status=2.htm" tppabs="http://localhost:8080/admin/order_list?status=2">已付款</a></li>
+		<li  role="presentation"><a href="order_list-status=3.htm" tppabs="http://localhost:8080/admin/order_list?status=3">配送中</a></li>
+		<li  role="presentation"><a href="order_list-status=4.htm" tppabs="http://localhost:8080/admin/order_list?status=4">已完成</a></li>
+	</ul>
+
+	<br>
+	
+	<table class="table table-bordered table-hover">
+
+	<tr>
+		<th width="5%">ID</th>
+		<th width="5%">总价</th>
+		<th width="15%">商品详情</th>
+		<th width="20%">收货信息</th>
+		<th width="10%">订单状态</th>
+		<th width="10%">支付方式</th>
+		<th width="10%">下单用户</th>
+		<th width="10%">下单时间</th>
+		<th width="10%">操作</th>
+	</tr>
+
+		
+			<tr>
+				<td><p>75</p></td>
+				<td><p>28.0</p></td>
+				<td>
+					
+						<p>玫瑰舒芙蕾(28.0) x 1</p>
+					
+				</td>
+				<td>
+					<p>管理员</p>
+					<p>1333333333</p>
+					<p>中华人民共和国</p>
+				</td>
+				<td>
+					<p>
+						
+						
+						<span style="color:black;">已完成</span>
+
+					</p>
+				</td>
+				<td>
+					<p>
+
+						
+						支付宝
+						
+
+					</p>
+				</td>
+				<td><p>admin</p></td>
+				<td><p>2019-10-07 20:31:07.0</p></td>
+				<td>
+					
+					
+					<a class="btn btn-danger" href="order_delete-id=75&pageNumber=1&status=0.htm" tppabs="http://localhost:8080/admin/order_delete?id=75&pageNumber=1&status=0">删除</a>
+				</td>
+			</tr>
+		
+	
+     
+</table>
+
+<br>
+	
+
+
+<div style='text-align:center;'>
+    <a class='btn btn-info'   disabled  >首页</a>
+    <a class='btn btn-info' disabled >上一页</a>
+    <h3 style='display:inline;'>[1/1]</h3>
+    <h3 style='display:inline;'>[1]</h3>
+    <a class='btn btn-info' disabled >下一页</a>
+    <a class='btn btn-info' disabled >尾页</a>
+    <input type='text' class='form-control' style='display:inline;width:60px;' value=''/><a class='btn btn-info' href='javascript:void(0);' onclick='location.href="order_list-pageNumber=.htm"/*tpa=http://localhost:8080/admin/order_list?pageNumber=*/+(this.previousSibling.value)+"&status=0"'>GO</a>
+</div>
+
+<br>
+</div>
+</body>
+</html>

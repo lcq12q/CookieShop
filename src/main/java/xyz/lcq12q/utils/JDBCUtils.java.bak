@@ -1,0 +1,77 @@
+package xyz.lcq12q.utils;
+
+import org.apache.tomcat.jdbc.pool.DataSource;
+
+import java.sql.*;
+
+// 工具类，完成获取数据库连接，关闭连接
+public class JDBCUtils_bak {
+	// 1. 声明并初始化 Tomcat JDBC 连接池
+	private static DataSource dataSource;
+	// 获取连接
+	public static  Connection getConnection() {
+		Connection conn = null;
+		String dbUser = "root";
+		String dbPass = "qualcomm1";
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/cookieshop?useSSL=false&serverTimezone=Asia/Shanghai&characterEncoding=utf8&allowPublicKeyRetrieval=true",dbUser,dbPass);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return conn;
+	}
+
+	// 关闭查询连接
+	public static void close(ResultSet rs, Statement stmt, Connection conn) {
+		if (rs != null) {
+			try {
+				rs.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		if (stmt != null) {
+			try {
+				stmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		if (conn != null) {
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	// 关闭查询连接
+	public static void close(Statement stmt, Connection conn) {
+		if (stmt != null) {
+			try {
+				stmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		if (conn != null) {
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+	static void main() {
+		Connection conn = getConnection();
+		System.out.println(conn);
+	}
+
+	public static DataSource getDataSource() {
+		return dataSource;  // 返回连接池对象
+	}
+}
