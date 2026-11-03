@@ -92,8 +92,10 @@
 			</div>
 
 			<div class="header-right cart">
-				<a href="goods_cart.jsp.htm">
-					<span class="glyphicon glyphicon-shopping-cart " aria-hidden="true"><span class="card_num">0</span></span>
+				<a href="goods_cart.jsp">
+					<span class="glyphicon glyphicon-shopping-cart " aria-hidden="true">
+						<span class="card_num">${empty cart ? 0 : cart.totalCount}</span>
+					</span>
 				</a>
 			</div>
 			<div class="clearfix"> </div>

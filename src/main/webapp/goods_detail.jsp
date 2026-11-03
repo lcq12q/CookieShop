@@ -20,7 +20,7 @@
 	<script type="text/javascript" src="js/jquery.flexslider.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="layer/layer.js"></script>
-	<script type="text/javascript" src="js/cart.js"></script>
+	<script type="text/javascript" src="js/cart.js?v=20261103a"></script>
 	<script>
 		$(function() {
 			$('.flexslider').flexslider({
