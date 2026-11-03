@@ -19,9 +19,16 @@ function updateCartBadge(count) {
 }
 
 /**
- * 解析 /cart_data 返回的 JSON，解析失败返回 null
+ * 解析 /cart_data 返回的购物车数据。
+ * 注意：服务端响应头是 application/json，jQuery 会“智能猜测”并自动把响应解析成对象，
+ * 此时 data 已经是对象，直接返回即可；只有 data 仍是字符串时才需要 JSON.parse。
+ * 若不加这层判断，对对象执行 JSON.parse("[object Object]") 会抛异常，
+ * 导致 refreshCart 退化为仅更新角标、商品行“数量”永远不动。
  */
 function parseCart(data) {
+	if (data && typeof data === "object") {
+		return data
+	}
 	try {
 		return JSON.parse($.trim(data || "{}"))
 	} catch (e) {
@@ -68,15 +75,24 @@ function refreshCart(done) {
 		// 1. 顶部角标
 		updateCartBadge(cart.totalCount)
 
-		// 2. 每行“数量” + 记录仍在购物车里的商品 id
+		// 2. 每行"数量" + 记录仍在购物车里的商品 id
 		var presentIds = {}
+		var updated = 0
 		$.each(cart.items, function (i, it) {
 			presentIds[it.goodsId] = true
 			var $qty = $("#qty-" + it.goodsId)
 			if ($qty.length) {
 				$qty.text("数量: " + it.quantity)
+				updated++
 			}
 		})
+
+		// 兜底：在购物车页却一个数量 span 都没更新到（说明当前页面 DOM 还是旧版 JSP，
+		// 没有 id 钩子），自动刷新一次拉取新 DOM，避免“点了没反应”卡住用户。
+		if (updated === 0 && cart.items.length > 0 && $("#cart-items-list").length) {
+			location.reload()
+			return
+		}
 
 		// 3. 已经被删空的行，淡出移除
 		$(".cart-item-row").each(function () {

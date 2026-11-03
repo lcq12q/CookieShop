@@ -18,7 +18,7 @@
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="layer/layer.js"></script>
-	<script type="text/javascript" src="js/cart.js?v=20261103b"></script>
+	<script type="text/javascript" src="js/cart.js?v=20261103d"></script>
 </head>
 <body>
 	<!--header-->
@@ -54,7 +54,7 @@
 			</div>
 			<div class="cart-header col-md-12">
 				<hr>
-				<h3>订单总金额: ¥ ${cart.totalPrice}</h3>
+				<h3>订单总金额: ¥ <span id="cart-total-amount">${cart.totalPrice}</span></h3>
 				<a class="btn btn-success btn-lg" style="margin-left:74%" href="order_submit">提交订单</a>
 			</div>
 		</div>
