@@ -1,10 +1,13 @@
 package xyz.lcq12q.dao;
 
+import com.mysql.jdbc.Connection;
 import xyz.lcq12q.bean.Goods;
 
 import java.util.List;
 
 public interface IGoodsDao {
+	// 通过商品id修改商品库存
+	int updateGoodsStock(Connection conn,int id,int stock);
 	// 分页查询推荐类型商品，给type、pageNumber、pageSize，查询推荐类型商品
 	List<Goods> queryByRecommendType(int type, int pageNumber, int pageSize);
 
@@ -38,4 +41,6 @@ public interface IGoodsDao {
 
 	// 分页查询商品信息的总记录数
 	int queryByTypeIdCount(int typeid);
+
+	void updateGoods(Goods goods);
 }

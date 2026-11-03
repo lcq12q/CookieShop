@@ -15,8 +15,20 @@ import java.util.List;
 
 public class GoodsDaoImpl implements IGoodsDao {
 	/**
+	 * 通过商品id修改商品库存
+	 * @param conn 数据库连接
+	 * @param id 商品id
+	 * @param stock 商品库存
+	 * @return 更新结果，1表示成功，0表示失败
+	 */
+	@Override
+	public int updateGoodsStock(com.mysql.jdbc.Connection conn, int id, int stock) {
+		return 0;
+	}
+
+	/**
 	 * 通过推荐类型查询商品列表
-	 * @param recommendId 推荐类型id
+	 * @param type 推荐类型id
 	 * @param pageNumber 页码
 	 * @param pageSize 每页数量
 	 * @return 商品列表
@@ -509,6 +521,28 @@ public class GoodsDaoImpl implements IGoodsDao {
 			JDBCUtils.close(rs, pstmt, conn);
 		}
 		return result;
+	}
+
+	/**
+	 * 更新商品信息
+	 * @param goods 商品对象
+	 */
+	@Override
+	public void updateGoods(Goods goods) {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		try {
+			conn = JDBCUtils.getConnection();
+			String sql = "UPDATE goods SET stock=? WHERE id=?";
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, goods.getStock());
+			ps.setInt(2, goods.getId());
+			ps.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			JDBCUtils.close(ps, conn);
+		}
 	}
 
 	void main() {

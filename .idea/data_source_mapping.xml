@@ -2,6 +2,8 @@
 <project version="4">
   <component name="DataSourcePerFileMappings">
     <file url="file://$PROJECT_DIR$/src/main/java/xyz/lcq12q/dao/impl/GoodsDaoImpl.java" value="61bfd03d-d41f-4c24-8674-e573099b1491" />
+    <file url="file://$PROJECT_DIR$/src/main/java/xyz/lcq12q/dao/impl/OrderDaoImpl.java" value="61bfd03d-d41f-4c24-8674-e573099b1491" />
+    <file url="file://$PROJECT_DIR$/src/main/java/xyz/lcq12q/dao/impl/OrderItemDaoImpl.java" value="61bfd03d-d41f-4c24-8674-e573099b1491" />
     <file url="file://$PROJECT_DIR$/src/main/java/xyz/lcq12q/dao/impl/TypeDaoImpl.java" value="61bfd03d-d41f-4c24-8674-e573099b1491" />
     <file url="file://$PROJECT_DIR$/src/main/java/xyz/lcq12q/dao/impl/UserDaoimpl.java" value="61bfd03d-d41f-4c24-8674-e573099b1491" />
   </component>

@@ -1,6 +1,7 @@
 package xyz.lcq12q.bean;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -104,5 +105,16 @@ public class Order {
 
 	public void setOrderItems(List<OrderItem> orderItems) {
 		this.orderItems = orderItems;
+	}
+
+	/**
+	 * 格式化后的下单时间，格式 yyyy-MM-dd HH:mm:ss，
+	 * 供 JSP 直接展示，避免在页面里处理 java.time 类型。
+	 */
+	public String getDatetimeText() {
+		if (datetime == null) {
+			return "";
+		}
+		return datetime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
 	}
 }
