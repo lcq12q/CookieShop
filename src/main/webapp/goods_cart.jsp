@@ -18,7 +18,7 @@
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="layer/layer.js"></script>
-	<script type="text/javascript" src="js/cart.js?v=20261103a"></script>
+	<script type="text/javascript" src="js/cart.js?v=20261103b"></script>
 </head>
 <body>
 	<!--header-->
@@ -30,8 +30,9 @@
 	<div class="cart-items">
 		<div class="container">
 			<h2>我的购物车</h2>
+			<div id="cart-items-list">
 			<c:forEach var="item" items="${cart.items}">
-			<div class="cart-header col-md-6">
+			<div class="cart-header col-md-6 cart-item-row" data-goods="${item.goods.id}">
                 <div class="cart-sec simpleCart_shelfItem">
                     <div class="cart-item cyc">
                         <a href="/goods_detail?id=${item.goods.id}">
@@ -41,7 +42,7 @@
                     <div class="cart-item-info">
                         <h3><a href="/goods_detail?id=${item.goods.id}">${item.goods.name}</a></h3>
                         <h3><span>单价: ¥ ${item.goods.price}</span></h3>
-                        <h3><span>数量: ${item.quantity}</span></h3>
+                        <h3><span id="qty-${item.goods.id}" class="item-qty">数量: ${item.quantity}</span></h3>
                         <a class="btn btn-info" href="javascript:buy(${item.goods.id});">增加</a>
                         <a class="btn btn-warning" href="javascript:lessen(${item.goods.id});">减少</a>
                         <a class="btn btn-danger" href="javascript:deletes(${item.goods.id});">删除</a>
@@ -50,6 +51,7 @@
                 </div>
 			</div>
 			</c:forEach>
+			</div>
 			<div class="cart-header col-md-12">
 				<hr>
 				<h3>订单总金额: ¥ ${cart.totalPrice}</h3>
